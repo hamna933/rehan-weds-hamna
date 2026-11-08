@@ -4,8 +4,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500&display=swap">
 <style>
-/* Layout: a sealed envelope over the gate photo; breaking the seal starts fireworks and music. Then a starry-night hero, the Anwar family's
-   invitation on marble, a countdown and scratch card, three full-screen event posters (Mehndi, Barat, Walima), and a closing guest page. */
 :root{
   --ivory:#fbf7f3;--blush:#f2e1dc;--wine:#6b1426;--wine-deep:#3f0b16;--gold:#b08646;--gold-hi:#e9d09a;
   --ink:#2f1d23;--mute:#8a7179;--line:rgba(107,20,38,.18);
@@ -35,21 +33,18 @@ a,button{-webkit-tap-highlight-color:transparent}
 button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 .wrap{padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
 
-/* reveal */
 [data-r]>*{transition:opacity 1.1s var(--eo),transform 1.3s var(--eo),filter 1.2s var(--eo);transition-delay:calc(var(--i,0)*90ms)}
 .r-pre[data-r]>*{opacity:0;transform:translateY(30px);filter:blur(8px)}
 .cw{display:inline-block;clip-path:inset(-60% -40% 0 -40%);padding-bottom:.14em;margin-bottom:-.14em;vertical-align:bottom}
 .ch{display:inline-block;transition:transform 1.25s var(--eo),opacity 1.25s var(--eo);transition-delay:calc(var(--ci)*55ms + var(--cd,0ms))}
 .r-pre .ch,.hero.pre .ch{transform:translateY(115%) rotate(9deg);opacity:0}
 
-/* poster scenes */
 .scene{position:relative;min-height:100svh;overflow:hidden;isolation:isolate;background:var(--ivory)}
 .blurbg{position:absolute;inset:-40px;background-size:cover;background-position:center;filter:blur(36px) saturate(1.1);transform:scale(1.1);z-index:-2}
 .poster{position:relative;height:100svh;width:min(100%,calc(100svh * 9 / 16));margin-inline:auto;container-type:size;overflow:hidden;box-shadow:0 0 80px rgba(60,20,30,.18)}
 .ph{position:absolute;inset:0;background-size:cover;background-position:center;z-index:-1}
 .tx{position:absolute;left:7cqw;right:7cqw;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:1.1cqh}
 
-/* ---------- bow gate: seal on the bow, doors swing open ---------- */
 .gate{position:fixed;inset:0;z-index:40;overflow:hidden;cursor:pointer;background:#2a2017;perspective:1600px}
 .gate .blur{position:absolute;inset:-40px;background:url("bowgate.jpg") center/cover;filter:blur(30px) brightness(.7)}
 .gate .frame{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);height:100%;aspect-ratio:492/888;max-width:none;min-width:100%;min-height:calc(100vw*888/492);transform-style:preserve-3d;transition:transform 2.6s var(--eio)}
@@ -86,7 +81,6 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offse
 .gate.fade{opacity:0;transition:opacity 1.1s ease;pointer-events:none}
 #fw{position:fixed;inset:0;width:100%;height:100%;z-index:45;pointer-events:none}
 
-/* progress + music */
 .progress{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:2px;z-index:35;transform-origin:0 50%;transform:scaleX(var(--sp,0));background:linear-gradient(90deg,var(--gold),var(--wine));pointer-events:none}
 .music{position:fixed;z-index:46;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.7);background:rgba(255,248,242,.65);color:var(--wine);display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 8px 24px rgba(60,20,30,.18)}
 .music svg{width:20px;height:20px}
@@ -94,7 +88,6 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offse
 .music .eq{position:absolute;inset:-5px;border-radius:50%;border:1.5px solid var(--gold);opacity:0;animation:ping 2s var(--eo) infinite}
 .music.muted .eq{display:none}
 
-/* hero (starry night) */
 .hero .kb{position:absolute;inset:0;animation:kb 24s ease-in-out infinite alternate}
 @keyframes kb{to{transform:scale(1.06) translateY(-1%)}}
 .hero .ph{transform:translateY(calc(var(--h,0)*10%)) scale(calc(1 + var(--h,0)*.08));transition:transform 3s var(--eo),filter 3s var(--eo)}
@@ -115,7 +108,6 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offse
 @keyframes drip{to{top:110%}}
 #stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 
-/* hosts */
 .hosts .ph{transform:scale(calc(1.18 - var(--e,1)*.18))}
 .hosts .bism{position:absolute;left:50%;top:13cqh;width:50cqw;transform:translateX(-50%)}
 .hosts .tx{top:22.5%;height:44%;color:var(--wine-deep);gap:.7cqh}
@@ -127,7 +119,6 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offse
 .hosts .full{white-space:nowrap;font-family:var(--f-display);font-style:italic;font-weight:500;font-size:8cqw;line-height:1.05;color:var(--wine)}
 .hosts .with{font-size:2.8cqw;font-weight:500;letter-spacing:.4em;text-transform:uppercase;color:var(--gold)}
 
-/* countdown + scratch on lantern garden */
 .lantern{position:relative;overflow:hidden;isolation:isolate;text-align:center;background:#3a2346}
 .lantern .bgimg{position:absolute;inset:0;background-size:cover;background-position:center 30%;z-index:-2}
 .lantern::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(40,20,50,.15),rgba(40,20,50,.35) 60%,rgba(251,247,243,.0))}
@@ -160,7 +151,6 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offse
 .chip:hover{transform:translateY(-6px)}
 .chip:hover i{transform:scale(1.12)}
 
-/* event posters */
 .ev .ph{transform:translateY(calc((1 - var(--e,1))*-7%)) scale(1.08)}
 .ev .eyebrow{font-size:2.8cqw}
 .ev-title{font-family:var(--f-display);font-style:italic;font-size:min(16cqw,8.6cqh);line-height:.95;font-variation-settings:"opsz" 96}
@@ -203,7 +193,6 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offse
 .ev-w .btn{background:rgba(40,25,15,.25)}
 .ev-w .btn:hover{color:#3a2614}
 
-/* guest page */
 .guests{position:relative;overflow:hidden;isolation:isolate;background:var(--ivory)}
 .guests .bgimg{position:absolute;inset:0;background-size:cover;background-position:center bottom;z-index:-2;opacity:.9}
 .guests::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(251,247,243,.82),rgba(251,247,243,.55) 70%,rgba(251,247,243,.2))}
@@ -236,7 +225,6 @@ footer p{font-size:11px;letter-spacing:.4em;color:var(--wine)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01s!important;animation:none!important}}
 </style>
 
-<!-- Bow gate -->
 <div class="gate" id="gate">
   <div class="blur"></div>
   <div class="frame">
@@ -432,14 +420,8 @@ const html=document.documentElement;
 
 (function(){let d='';const N=80;for(let i=0;i<=N;i++){const a=i/N*Math.PI*2;const r=54+Math.sin(a*7)*2.4+Math.sin(a*13+1)*1.5+Math.sin(a*3+2)*1.2;d+=(i?'L':'M')+(60+Math.cos(a)*r).toFixed(1)+' '+(60+Math.sin(a)*r).toFixed(1)}$('#wxp').setAttribute('d',d+'Z')})();
 
-/* embossed floral paper */
 (function(){const f=n=>Math.round(n*10)/10;
   const leaf=(x,y,a,l,w)=>{const dx=Math.cos(a),dy=Math.sin(a),nx=-dy,ny=dx,tx=x+dx*l,ty=y+dy*l,mx=x+dx*l*.45,my=y+dy*l*.45;return `M${f(x)} ${f(y)}Q${f(mx+nx*w)} ${f(my+ny*w)} ${f(tx)} ${f(ty)}Q${f(mx-nx*w)} ${f(my-ny*w)} ${f(x)} ${f(y)}Z`};
-  const flower=(cx,cy,r,rot)=>{let d='';for(let i=0;i<5;i++)d+=leaf(cx,cy,rot+i/5*Math.PI*2,r,r*.55);for(let i=0;i<5;i++)d+=leaf(cx,cy,rot+.6+i/5*Math.PI*2,r*.55,r*.3);return d};
-  const stem=(x,y,a,len,n)=>{let d=`M${x} ${y}`;const ex=x+Math.cos(a)*len,ey=y+Math.sin(a)*len;d+=`Q${f((x+ex)/2+Math.cos(a+1.5)*30)} ${f((y+ey)/2+Math.sin(a+1.5)*30)} ${f(ex)} ${f(ey)}`;let L='';for(let i=1;i<=n;i++){const t=i/(n+1);L+=leaf(x+(ex-x)*t,y+(ey-y)*t,a+(i%2?.9:-.9),38,12)}return [d,L]};
-  let D='',S='';[[90,110,46,.2],[330,60,34,1],[250,300,52,.5],[60,420,38,.9],[380,420,44,.1],[170,560,30,.7]].forEach(([x,y,r,o])=>{D+=flower(x,y,r,o);const [a,b]=stem(x,y,o*3+1,150,4);S+=a;D+=b});
-  const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='460' height='640' viewBox='0 0 460 640'><g fill='none' stroke-width='1.6'><path d='${D}${S}' stroke='rgba(255,255,255,.9)' transform='translate(-1.2 -1.2)'/><path d='${D}${S}' stroke='rgba(150,125,90,.22)' transform='translate(1.2 1.2)'/></g><path d='${D}' fill='rgba(255,255,255,.18)'/></svg>`;
-  html.style.setProperty('--emboss',`url("data:image/svg+xml,${encodeURIComponent(svg)}")`);
   let w='';for(let i=0;i<18;i++){const a=i/18*Math.PI*2;w+=`<path d="${leaf(60+Math.cos(a)*31,60+Math.sin(a)*31,a+1.9,10,3.4)}"/>`}document.getElementById('wreath').innerHTML=w;
 })();
 
@@ -453,7 +435,6 @@ if('IntersectionObserver' in window&&!reduce){
   $$('[data-r]').forEach(el=>{el.classList.add('r-pre');io.observe(el)});
 }
 
-/* fireworks */
 const fw=$('#fw'),fx=fw.getContext('2d');let rockets=[],sparks=[],fwOn=false,W=0,H=0;
 function size(){const d=Math.min(2,devicePixelRatio||1);W=innerWidth;H=innerHeight;fw.width=W*d;fw.height=H*d;fx.setTransform(d,0,0,d,0,0)}
 size();addEventListener('resize',size);
@@ -472,7 +453,6 @@ function loop(){fx.globalCompositeOperation='destination-out';fx.fillStyle='rgba
   fx.globalAlpha=1;if(rockets.length||sparks.length)requestAnimationFrame(loop);else{fwOn=false;fx.globalCompositeOperation='source-over';fx.clearRect(0,0,W,H)}}
 function show(n,spread){for(let i=0;i<n;i++)setTimeout(()=>{const x=W*(.15+Math.random()*.7);launch(x,x+(Math.random()-.5)*80,H*(.12+Math.random()*.3))},i*spread+Math.random()*120)}
 
-/* twinkling stars + rising lanterns over hero */
 (function(){const cv=$('#stars'),ctx=cv.getContext('2d');let w,h,st=[],ln=[],run=false,t=0;
   function sz(){const d=Math.min(2,devicePixelRatio||1),r=cv.getBoundingClientRect();w=r.width;h=r.height;cv.width=w*d;cv.height=h*d;ctx.setTransform(d,0,0,d,0,0);
     st=Array.from({length:60},()=>({x:Math.random()*w,y:Math.random()*h*.55,r:.6+Math.random()*1.3,p:Math.random()*6}));
@@ -486,27 +466,28 @@ function show(n,spread){for(let i=0;i<n;i++)setTimeout(()=>{const x=W*(.15+Math.
   sz();addEventListener('resize',sz);if(reduce){draw();return}
   new IntersectionObserver(([e])=>{if(e.isIntersecting&&!run){run=true;requestAnimationFrame(draw)}else if(!e.isIntersecting)run=false}).observe(cv)})();
 
-/* music */
 const song=$('#song'),mb=$('#music');
-let bytes=null,mode='el',actx=null,gain=null,srcNode=null,abuf=null,decoding=null,elFailed=false;
-try{const sd=document.getElementById('songdata');if(sd){const bin=atob(sd.textContent.trim());bytes=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);
-  song.src=URL.createObjectURL(new Blob([bytes],{type:'audio/mpeg'}));song.load()}}catch(e){elFailed=true}
-song.addEventListener('error',()=>{elFailed=true});
+let bytes=null,mode='el',actx=null,gain=null,srcNode=null,abuf=null,decoding=null,elFailed=false,opened=false;
+song.addEventListener('error',()=>{elFailed=true;if(opened&&mode==='el'){song.pause();startWA()}});
 function setPlaying(on){mb.classList.toggle('muted',!on);mb.setAttribute('aria-label',on?'Pause music':'Play music')}
 function ensureCtx(){if(actx)return actx;const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;
   try{actx=new AC();gain=actx.createGain();gain.gain.value=.85;gain.connect(actx.destination)}catch(e){actx=null}return actx}
-function startWA(){const ctx=ensureCtx();if(!ctx||!bytes){setPlaying(false);return}mode='wa';if(ctx.state==='suspended')ctx.resume();
+function getBytes(){if(bytes)return Promise.resolve(bytes);
+  return fetch('song.mp3').then(r=>{if(!r.ok)throw 0;return r.arrayBuffer()}).then(b=>{bytes=new Uint8Array(b);return bytes})}
+function startWA(){const ctx=ensureCtx();if(!ctx){setPlaying(false);return}mode='wa';if(ctx.state==='suspended')ctx.resume();
   const go=()=>{if(srcNode)return;srcNode=ctx.createBufferSource();srcNode.buffer=abuf;srcNode.loop=true;srcNode.connect(gain);srcNode.start(0);setPlaying(true)};
   if(abuf){go();return}
-  if(!decoding)decoding=new Promise((res,rej)=>{const r=ctx.decodeAudioData(bytes.buffer.slice(0),res,rej);if(r&&r.then)r.then(res,rej)});
-  setPlaying(true);decoding.then(b=>{abuf=b;go()},()=>setPlaying(false))}
+  if(!decoding)decoding=getBytes().then(by=>new Promise((res,rej)=>{const r=ctx.decodeAudioData(by.buffer.slice(0),res,rej);if(r&&r.then)r.then(res,rej)}));
+  setPlaying(true);decoding.then(b=>{abuf=b;go()},()=>{decoding=null;setPlaying(false)})}
 function play(){
   if(mode==='wa'){startWA();if(actx&&actx.state==='suspended')actx.resume().then(()=>setPlaying(true));return}
-  if(bytes){ensureCtx();if(actx&&actx.state==='suspended')actx.resume()}
+  ensureCtx();if(actx&&actx.state==='suspended')actx.resume();
   if(elFailed||!song.src){startWA();return}
   song.volume=.85;let settled=false;
   const fail=()=>{if(settled)return;settled=true;song.pause();startWA()};
-  const t=setTimeout(()=>{if(song.paused||song.currentTime===0)fail()},2500);
+  const t=setTimeout(()=>{if(!settled&&song.paused&&song.readyState>=3)fail()},6000);
+  song.addEventListener('playing',()=>{settled=true;clearTimeout(t);setPlaying(true)},{once:true});
+  setPlaying(true);
   const p=song.play();if(p&&p.then)p.then(()=>{settled=true;clearTimeout(t);setPlaying(true)},()=>{clearTimeout(t);fail()})}
 function pause(){if(mode==='wa'){if(actx)actx.suspend();setPlaying(false)}else{song.pause();setPlaying(false)}}
 function isPlaying(){return mode==='wa'?(actx&&actx.state==='running'&&!!srcNode):!song.paused}
@@ -516,8 +497,7 @@ mb.addEventListener('click',()=>{if(isPlaying())pause();else play()});
   ev.forEach(n=>document.addEventListener(n,first,{capture:true,passive:true}));
   try{const p=song.play();if(p&&p.then)p.then(()=>{setPlaying(true);ev.forEach(n=>document.removeEventListener(n,first,true))},()=>{})}catch(e){}})();
 
-/* open envelope */
-const gate=$('#gate'),hero=$('#hero');html.classList.add('locked');let opened=false;
+const gate=$('#gate'),hero=$('#hero');html.classList.add('locked');
 function open(){if(opened)return;opened=true;play();
   if(reduce){gate.hidden=true;hero.classList.remove('pre');html.classList.remove('locked');return}
   gate.classList.add('open');
@@ -527,22 +507,18 @@ function open(){if(opened)return;opened=true;play();
   setTimeout(()=>{gate.hidden=true;html.classList.remove('locked')},3800);}
 $('#gate').addEventListener('click',open);
 
-/* a small celebration when each event comes into view */
 if('IntersectionObserver' in window&&!reduce){const seen=new Set();
   const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!seen.has(e.target)){seen.add(e.target);if(opened)show(3,300)}}),{threshold:.55});
   $$('.ev').forEach(s=>io2.observe(s))}
 
-/* scroll engine */
 const scenes=$$('[data-scene]'),prog=$('#progress');let ticking=false;
 function frame(){ticking=false;const vh=innerHeight,max=html.scrollHeight-vh;prog.style.setProperty('--sp',max>0?(scrollY/max).toFixed(4):0);if(reduce)return;
   hero.style.setProperty('--h',Math.min(1,Math.max(0,scrollY/vh)).toFixed(3));
   scenes.forEach(s=>{const t=s.getBoundingClientRect().top;s.style.setProperty('--e',Math.min(1,Math.max(0,1-t/vh)).toFixed(3))})}
 addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(frame)}},{passive:true});frame();
 
-/* smooth jumps from chips */
 $$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=$(a.getAttribute('href'));if(!t)return;e.preventDefault();t.scrollIntoView({behavior:reduce?'auto':'smooth'})}));
 
-/* countdown to Mehndi */
 const target=new Date('2026-12-11T18:00:00+05:00').getTime();
 const U={d:$('#cd-d'),h:$('#cd-h'),m:$('#cd-m'),s:$('#cd-s')};
 function setNum(el,str){if(el.children.length!==str.length){el.innerHTML=[...str].map(()=>`<span class="dg"><span class="strip">${'0123456789'.split('').map(n=>`<i>${n}</i>`).join('')}</span></span>`).join('')}
@@ -551,7 +527,6 @@ function tick(){let ms=Math.max(0,target-Date.now());const d=Math.floor(ms/864e5
   setNum(U.d,String(d).padStart(2,'0'));setNum(U.h,String(h).padStart(2,'0'));setNum(U.m,String(m).padStart(2,'0'));setNum(U.s,String(s).padStart(2,'0'))}
 tick();setInterval(tick,1000);
 
-/* scratch foil */
 (function(){const cv=$('#scratch'),ctx=cv.getContext('2d');let done=false,down=false,moves=0,last=null;
   function paint(){const r=cv.getBoundingClientRect(),d=Math.min(2,devicePixelRatio||1);cv.width=Math.max(1,Math.round(r.width*d));cv.height=Math.max(1,Math.round(r.height*d));
     const W=cv.width,H=cv.height;ctx.globalCompositeOperation='source-over';
@@ -571,7 +546,6 @@ tick();setInterval(tick,1000);
   cv.addEventListener('pointermove',scratch);
   ['pointerup','pointercancel'].forEach(t=>cv.addEventListener(t,()=>{down=false;last=null;if(!done)check()}));})();
 
-/* copy */
 $$('.copy').forEach(b=>b.addEventListener('click',()=>{const o=document.getElementById(b.dataset.copy);
   const ok=()=>{b.textContent='Copied';setTimeout(()=>b.textContent='Copy',1600)};
   const sel=()=>{const r=document.createRange();r.selectNodeContents(o);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'};
